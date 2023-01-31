@@ -3,13 +3,11 @@ import styled from "styled-components";
 import { colors } from "../../app/styles";
 
 export const Main = styled.div`
+  min-height: calc(100vh - 140px);
+
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media (min-height: 800px) and (min-width: 992px){
-    height: calc(100vh - 140px);
-  }
 `;
 
 export const Card = styled.div`

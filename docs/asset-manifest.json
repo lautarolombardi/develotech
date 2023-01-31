@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/develotech/static/js/main.81ebab20.js",
+    "main.js": "/develotech/static/js/main.fc9584d7.js",
     "index.html": "/develotech/index.html",
     "static/media/loader.svg": "/develotech/static/media/loader.f93708c7a74d39749c29a0863219faf2.svg",
-    "main.81ebab20.js.map": "/develotech/static/js/main.81ebab20.js.map"
+    "main.fc9584d7.js.map": "/develotech/static/js/main.fc9584d7.js.map"
   },
   "entrypoints": [
-    "static/js/main.81ebab20.js"
+    "static/js/main.fc9584d7.js"
   ]
 }
