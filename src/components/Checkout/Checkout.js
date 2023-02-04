@@ -96,7 +96,6 @@ const Checkout = () => {
     createOrder(order).then((res) => {
       setOrderId(res);
       setPurchaseMade(true);
-      setLoading(false);
       sendEmail();
       clearCart();
     });

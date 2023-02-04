@@ -36,7 +36,11 @@ export const Card = styled.div`
     flex-basis: 40%;
 
     img {
-      max-width: 250px;
+      max-width: 150px;
+
+      @media (min-width: 992px){
+        max-width: 250px;
+      }
     }
   }
 
@@ -54,6 +58,10 @@ export const Card = styled.div`
     }
 
     .view-cart-btn{
+      margin: 20px 0;
+    }
+
+    .loader{
       margin: 20px 0;
     }
   }
