@@ -5,102 +5,81 @@ const regExp = {
   email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+$/,
 };
 
-const isValidInitial = {
-  name: "",
-  dni: "",
-  email: "",
-  phone: "",
-  address: "",
-  card: {
-    number: "",
-    exp: "",
-    cvv: "",
-  },
-};
-
 export const useForm = (initialForm) => {
   const [form, setForm] = useState(initialForm);
 
-  const [isValid, setIsValid] = useState(isValidInitial);
-
   const validateFields = (e) => {
-    let { name, value } = e.target;
+    let { id, value } = e.target;
 
-    switch (name) {
+    switch (id) {
       case "name": {
         if (value !== "" && regExp.name.test(value)) {
-          setIsValid({ ...isValid, name: "valid" });
+          setForm({ ...form, name: [value, "valid"] });
         } else {
-          setIsValid({ ...isValid, name: "invalid" });
+          setForm({ ...form, name: [value, "invalid"] });
         }
         break;
       }
 
       case "dni": {
         if (value !== "" && !isNaN(value)) {
-          setIsValid({ ...isValid, dni: "valid" });
+          setForm({ ...form, dni: [value, "valid"] });
         } else {
-          setIsValid({ ...isValid, dni: "invalid" });
+          setForm({ ...form, dni: [value, "invalid"] });
         }
         break;
       }
 
       case "email": {
         if (value !== "" && regExp.email.test(value)) {
-          setIsValid({ ...isValid, email: "valid" });
+          setForm({ ...form, email: [value, "valid"] });
         } else {
-          setIsValid({ ...isValid, email: "invalid" });
+          setForm({ ...form, email: [value, "invalid"] });
         }
         break;
       }
 
       case "phone": {
         if (value !== "" && !isNaN(value)) {
-          setIsValid({ ...isValid, phone: "valid" });
+          setForm({ ...form, phone: [value, "valid"]});
         } else {
-          setIsValid({ ...isValid, phone: "invalid" });
+          setForm({ ...form, phone: [value, "invalid"] });
         }
         break;
       }
 
       case "address": {
         if (value !== "") {
-          setIsValid({ ...isValid, address: "valid" });
+          setForm({ ...form, address: [value, "valid"] });
         } else {
-          setIsValid({ ...isValid, address: "invalid" });
+          setForm({ ...form, address: [value, "invalid"] });
         }
         break;
       }
 
-      case "cardNumber": {
-        if (value !== "" && !isNaN(value)) {
-          setIsValid({
-            ...isValid,
-            card: { ...isValid.card, number: "valid" },
-          });
-        } else {
-          setIsValid({
-            ...isValid,
-            card: { ...isValid.card, number: "invalid" },
-          });
+      case "cardNumber" : {
+        if(value !== "" && !isNaN(value)){
+          setForm({...form, card: {...form.card, number: [value, "valid"]}});
+        } else{
+          setForm({...form, card: {...form.card, number: [value, "invalid"]}});
         }
         break;
       }
 
-      case "exp": {
-        if (value !== "") {
-          setIsValid({ ...isValid, card: { ...isValid.card, exp: "valid" } });
-        } else {
-          setIsValid({ ...isValid, card: { ...isValid.card, exp: "invalid" } });
+      case "exp" : {
+        if(value !== ""){
+          setForm({...form, card: {...form.card, exp: [value, "valid"]}});
+        } else{
+          setForm({...form, card: {...form.card, exp: [value, "invalid"]}});
         }
         break;
       }
 
-      case "cvv": {
-        if (value !== "" && !isNaN(value)) {
-          setIsValid({ ...isValid, card: { ...isValid.card, cvv: "valid" } });
-        } else {
-          setIsValid({ ...isValid, card: { ...isValid.card, cvv: "invalid" } });
+      case "cvv" : {
+        if(value !== "" && !isNaN(value)){
+          setForm({...form, card: {...form.card, cvv: [value, "valid"]}});
+        } else{
+          setForm({...form, card: {...form.card, cvv: [value, "invalid"]}});
         }
         break;
       }
@@ -109,60 +88,21 @@ export const useForm = (initialForm) => {
     }
   };
 
-  const validateContactForm = () => {
-    if (
-      isValid.name !== "valid" ||
-      isValid.dni !== "valid" ||
-      isValid.email !== "valid" ||
-      isValid.phone !== "valid" ||
-      isValid.address !== "valid"
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  const validatePayForm = () => {
-    if (
-      isValid.card.number !== "valid" ||
-      isValid.card.exp !== "valid" ||
-      isValid.card.cvv !== "valid"
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-  
   const handleChange = (e) => {
-    let { name, value } = e.target;
+    let { id, value } = e.target;
 
-    setForm({
-      ...form,
-      [name]: value,
-    });
+    setForm({ ...form, [id]: [value, ""] });
 
     validateFields(e);
   };
 
-  const handleBlur = (e) => {
-    handleChange(e);
-    validateFields(e);
-  };
-
-  const handleReset = (e) => {
+  const reset = (e) => {
     setForm(initialForm);
-    setIsValid(isValidInitial);
   };
 
   return {
     form,
-    isValid,
     handleChange,
-    handleBlur,
-    handleReset,
-    validateContactForm,
-    validatePayForm,
+    reset,
   };
 };

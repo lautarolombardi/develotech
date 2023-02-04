@@ -7,6 +7,7 @@ import { colors } from "../../../app/styles";
 export const Card = styled(Link)`
   height: 100%;
   width: 100%;
+  max-width: 280px;
   padding: 20px;
 
   display: flex;
@@ -24,7 +25,7 @@ export const Card = styled(Link)`
     box-shadow: 0 0 10px #444;
   }
 
-  @media (min-width: 992px){
+  @media (min-width: 768px){
     max-width: 100%;
   }
 

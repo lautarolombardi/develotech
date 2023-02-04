@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/develotech/static/js/main.fc9584d7.js",
+    "main.js": "/develotech/static/js/main.8e3c036a.js",
     "index.html": "/develotech/index.html",
-    "static/media/loader.svg": "/develotech/static/media/loader.f93708c7a74d39749c29a0863219faf2.svg",
-    "main.fc9584d7.js.map": "/develotech/static/js/main.fc9584d7.js.map"
+    "static/media/loader.svg": "/develotech/static/media/loader.82275f2e9b27d33f13b6d184ac8f2f30.svg",
+    "main.8e3c036a.js.map": "/develotech/static/js/main.8e3c036a.js.map"
   },
   "entrypoints": [
-    "static/js/main.fc9584d7.js"
+    "static/js/main.8e3c036a.js"
   ]
 }

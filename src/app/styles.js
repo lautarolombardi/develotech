@@ -42,28 +42,6 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     overflow: hidden;
   }
-
-  .btn{
-    padding: 10px 20px;
-
-    display: inline-block;
-
-    background-color: ${({ disabled }) => (disabled ? "#ccc" : colors.main)};
-    border: none;
-
-    color: ${({ disabled }) => (disabled ? colors.main : "white")};
-
-    cursor: pointer;
-    transition: all 300ms;
-
-    &:hover {
-      background-color: ${({ disabled }) => disabled || colors.second};
-    }
-  }
-
-  .title{
-    margin-bottom: 20px;
-  }
 `;
 
 export const Button = styled.button`
@@ -75,6 +53,7 @@ export const Button = styled.button`
   border: none;
 
   color: ${({ disabled }) => (disabled ? colors.main : "white")};
+  font-size: 1.6rem;
 
   cursor: pointer;
   transition: all 300ms;

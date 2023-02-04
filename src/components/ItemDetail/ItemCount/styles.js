@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { colors } from "../../../app/styles";
-
 export const Main = styled.div`
   margin: 20px 0;
 
@@ -10,20 +8,12 @@ export const Main = styled.div`
   }
 `;
 
-export const CountControlBtn = styled.button`
-  margin: 0 10px;
-  padding: 8px 15px;
+export const ControlBtns = styled.div`
+  button{
+    margin: 0 10px;
+    padding: 10px 15px;
 
-  border: none;
-  background-color: ${({ disabled }) => (disabled ? "#ccc" : colors.main)};
-
-  color: ${({ disabled }) => (disabled ? colors.main : "#ccc")};
-
-  cursor: pointer;
-  transition: all 300ms;
-
-  &:hover {
-    background-color: ${colors.second};
-    color: white;
+    font-size: 1.5rem;
   }
 `;
+

@@ -1,3 +1,4 @@
+import { Button } from "../../../app/styles";
 import { useCartContext } from "../../../contexts/CartProvider";
 
 import { Grid, Row } from "./styles";
@@ -26,14 +27,13 @@ const ItemCart = ({ product }) => {
           </p>
         </div>
         <div>
-          <button
-            className="btn"
+          <Button
             onClick={() => {
               removeProduct(product);
             }}
           >
             Eliminar
-          </button>
+          </Button>
         </div>
       </Grid>
     </Row>

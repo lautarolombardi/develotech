@@ -5,7 +5,7 @@ import { colors } from "../../../app/styles";
 export const Main = styled.section`
   height: max-content;
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   padding: 15px;
 
   border: 1px solid ${colors.second};
@@ -30,13 +30,9 @@ export const Main = styled.section`
       height: max-content;
 
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
-
-      b{
-        color: ${colors.main};
-      }
+      align-items: center;
+      gap: 10px;
     }
   }
 `;

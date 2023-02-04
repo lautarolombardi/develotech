@@ -41,13 +41,10 @@ const Filter = () => {
           <h4>Marca</h4>
 
           <div>
-            <h5>Componentes</h5>
+            <h4>Componentes</h4>
             <ul>
               <li>
                 <FilterLink to="/brand/AMD">AMD</FilterLink>
-              </li>
-              <li>
-                <FilterLink to="/brand/Intel">Intel</FilterLink>
               </li>
               <li>
                 <FilterLink to="/brand/EVGA">EVGA</FilterLink>
@@ -58,7 +55,7 @@ const Filter = () => {
           <hr />
 
           <div>
-            <h5>Periféricos</h5>
+            <h4>Periféricos</h4>
             <ul>
               <li>
                 <FilterLink to="/brand/HyperX">HyperX</FilterLink>
@@ -81,7 +78,7 @@ const Filter = () => {
           <hr />
 
           <div>
-            <h5>Accesorios</h5>
+            <h4>Accesorios</h4>
             <FilterLink to="/brand/Redragon">Redragon</FilterLink>
           </div>
         </Brand>

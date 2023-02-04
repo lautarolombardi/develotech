@@ -1,19 +1,20 @@
 import { useState } from "react"
 
-import { CountControlBtn, Main } from "./styles";
+import { Button } from "../../../app/styles";
+import { ControlBtns, Main } from "./styles";
 
 const ItemCount = ({initial, stock, onAdd}) => {
   const [counter, setCounter] = useState(initial);
 
   return (
     <Main>
-      <div>
-        <CountControlBtn disabled={ counter <= 1 } onClick={()=>{ setCounter(counter - 1) }}>-</CountControlBtn>
+      <ControlBtns>
+        <Button disabled={ counter <= 1 } onClick={()=>{ setCounter(counter - 1) }}>-</Button>
         <b className="counter">{counter}</b>
-        <CountControlBtn disabled={counter >= stock} onClick={()=>{ setCounter(counter + 1) }}>+</CountControlBtn>
-      </div>
+        <Button disabled={counter >= stock} onClick={()=>{ setCounter(counter + 1) }}>+</Button>
+      </ControlBtns>
 
-      <button className="btn" disabled={stock <= 0} onClick={()=> { onAdd(counter) }}>Agregar al carrito</button>
+      <Button disabled={stock <= 0} onClick={()=> { onAdd(counter) }}>Agregar al carrito</Button>
     </Main>
   )
 }

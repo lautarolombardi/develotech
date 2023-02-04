@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const CartMain = styled.div`
+export const Main = styled.div`
+  text-align: center;
+
   .fin {
     margin-top: 20px;
 
